@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn - Disaster Relief</title>
+    <link rel="stylesheet" href="learn.css">
+</head>
+<body>
+
+    <!-- 🔍 Search Bar -->
+    <div class="search-container">
+        <input type="text" id="search-bar" placeholder="Search resources..." onkeyup="filterResources()">
+    </div>
+
+    <!-- 🌍 Learn Section -->
+    <section class="learn">
+        <h2>Learn</h2>
+        <p>Explore resources and training materials to prepare for and respond to disasters effectively.</p>
+
+        <div class="resource-container">
+            <!-- Disaster Preparedness Guide -->
+            <div class="resource-section" data-category="preparedness">
+                <img src="reee.png" alt="Disaster Preparedness Guide">
+                <div class="resource-content">
+                    <h3>Disaster Preparedness Guide</h3>
+                    <p>A guide covering emergency plans, essential supplies, and safety steps before, during, and after a disaster.</p>
+                    <a href="https://safetyculture.com/topics/disaster-preparedness/" target="_blank">Read Guide</a>
+                </div>
+            </div>
+
+            <!-- First Aid Training -->
+            <div class="resource-section" data-category="training">
+                <img src="first aid.jpg" alt="First Aid Training">
+                <div class="resource-content">
+                    <h3>First Aid Training</h3>
+                    <p>Learn CPR, wound care, burn treatment, and recognizing medical emergencies.</p>
+                    <a href="https://indianredcross.org/ircs/program/FirstAid" target="_blank">Access Training</a>
+                </div>
+            </div>
+
+            <!-- Volunteer Best Practices -->
+            <div class="resource-section" data-category="volunteering">
+                <img src="volunteer practice.jpg" alt="Volunteer Best Practices">
+                <div class="resource-content">
+                    <h3>Volunteer Best Practices</h3>
+                    <p>Guidelines for effective volunteering, safety measures, and roles during disaster relief.</p>
+                    <a href="https://volunteerhub.com/blog/best-practices-volunteer-organizations" target="_blank">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="learn.js"></script>
+</body>
+</html>
