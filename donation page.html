@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donation Form</title>
+    <link rel="stylesheet" href="donation.css"> 
+</head>
+<body background="donation.jpg"> 
+    <!-- 🌍 Donation Form Section -->
+    <section class="donation">
+        <h1>Donate to Disaster Relief</h1>
+        <p>Your contributions can make a significant impact. Donate to support disaster relief efforts.</p>
+        <form id="donationForm">
+            <input type="text" id="donorName" placeholder="Your Name" required>
+            <input type="email" id="donorEmail" placeholder="Your Email" required>
+            <input type="number" id="donationAmount" placeholder="Donation Amount ($)" required>
+            <select id="donationType" required>
+                <option value="" disabled selected>Select Donation Type</option>
+                <option value="one-time">One-Time</option>
+                <option value="monthly">Monthly</option>
+            </select>
+            <textarea id="message" placeholder="Message (Optional)"></textarea>
+            <button type="submit">Donate</button>
+        </form>
+    </section>
+
+    <script src="donation.js"></script>
+</body>
+</html>
