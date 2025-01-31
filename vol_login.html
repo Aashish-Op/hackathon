@@ -4,40 +4,182 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SG Cares Login</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            display: flex;
+            height: 100vh;
+        }
+        .left-section {
+            flex: 63%;
+            background-image: url('vol_img.jpg');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        .right-section {
+            flex: 30%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #ffffff;
+        }
+        .login-box {
+            width: 400px;
+            text-align: center;
+        }
+        .login-box img {
+            width: 300px;
+            margin-bottom: 20px;
+        }
+        .login-box h1 {
+            margin-bottom: 20px;
+        }
+        .input-field {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: 3px solid #000;
+            font-size: 16px;
+        }
+        .error-message {
+            color: red;
+            font-size: 14px;
+            margin-bottom: 10px;
+            text-align: left;
+        }
+        .login-btn {
+            width: 100%;
+            padding: 15px;
+            background-color: #d32f2f;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .login-btn:hover {
+            background-color: #b71c1c;
+        }
+        .forgot-password {
+            display: block;
+            margin-bottom: 20px;
+            color: #d32f2f;
+            text-decoration: none;
+        }
+        .social-icons a {
+            margin-right: 10px;
+        }
+        .social-icons img {
+            width: 50px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: none;
+            border: 3px solid black;
+            border-radius: 8px;
+            color: white;
+            margin-top: 10px;
+        }
+        .register-btn {
+            background-color: #28a745;
+        }
+        .register-btn:hover {
+            background-color: #218838;
+        }
+        .home-btn {
+            background-color: #007bff;
+            margin-left: 10px;
+        }
+        .home-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
-<body style="margin: 0; font-family: Arial, sans-serif;">
-    <div style="display: flex; height: 100vh;">
-        <div style="flex: 63%; background-image: url('vol_img.jpg'); background-size: cover; background-position: center;">
-            <div style="position: absolute; bottom: 20px; left: 20px; color: white; font-size: 24px;">
-            </div>
-        </div>
-        <div style="flex: 30%; display: flex; justify-content: center; align-items: center; background-color: #fff;">
-            <div style="width: 400px; text-align: center;">
-                <img src="Logoo.jpg"  style="width: 300px; margin-bottom: 20px;">
-                <h1 style="margin-bottom: 20px;">Login as a Volunteer</h1>
-                <!-- <button style="width: 100%; padding: 10px; background-color: #d32f2f; color: white; border: none; margin-bottom: 20px;">Login with Singpass</button>
-                <p>OR LOGIN WITH</p> -->
-                <input type="text" placeholder="Email/Mobile" style="width: 100%; padding: 15px; margin-bottom: 20px;border-radius: 5px; border: 4px solid #0a0606;">
-                <input type="password" placeholder="Password" style="width: 100%; padding: 15px; margin-bottom: 20px;border-radius: 5px; border: 4px solid #000000;">
-                <button style="width: 100%; padding: 15px; background-color: #d32f2f; color: white; border: none; margin-bottom: 20px;border: 4px ; border-radius: 5px;">Login</button>
-                <a href="#" style="display: block; margin-bottom: 20px; color: #d32f2f;">Forgot password?</a>
-                <div style="margin-bottom: 20px;">
-                    <a href="#" style="margin-right: 10px;"><img src="https://www.volunteer.gov.sg/images/default-source/vmsthemefiles/fb-icon.png?v=13" alt="Facebook" style="width: 50px;"></a>
-                    <a href="#" style="margin-right: 10px;"><img src="https://www.volunteer.gov.sg/images/default-source/vmsthemefiles/google-share-icon.png?sfvrsn=f2219b23_2" alt="Google" style="width: 50px;"></a>
-                    <a href="#" style="margin-right: 10px;"><img src="https://www.volunteer.gov.sg/images/default-source/vmsthemefiles/twitter.png?v=13" alt="Twitter" style="width: 50px;"></a>
-                    <a href="#"><img src="https://www.volunteer.gov.sg/images/default-source/vmsthemefiles/linkedin.png?v=13" alt="LinkedIn" style="width: 50px;"></a>
+<body>
+
+    <div class="container">
+        <div class="left-section"></div>
+        <div class="right-section">
+            <div class="login-box">
+                <img src="Logoo.jpg" alt="SG Cares Logo">
+                <h1>Login as a Volunteer</h1>
+
+                <form id="loginForm">
+                    <input type="text" id="emailMobile" class="input-field" placeholder="Email/Mobile">
+                    <div id="emailError" class="error-message"></div>
+
+                    <input type="password" id="password" class="input-field" placeholder="Password">
+                    <div id="passwordError" class="error-message"></div>
+
+                    <button type="submit" class="login-btn">Login</button>
+                </form>
+
+                <a href="#" class="forgot-password">Forgot password?</a>
+
+                <div class="social-icons">
+                    <a href="#"><img src="https://www.volunteer.gov.sg/images/default-source/vmsthemefiles/fb-icon.png?v=13" alt="Facebook"></a>
+                    <a href="#"><img src="https://www.volunteer.gov.sg/images/default-source/vmsthemefiles/google-share-icon.png?sfvrsn=f2219b23_2" alt="Google"></a>
+                    <a href="#"><img src="https://www.volunteer.gov.sg/images/default-source/vmsthemefiles/twitter.png?v=13" alt="Twitter"></a>
+                    <a href="#"><img src="https://www.volunteer.gov.sg/images/default-source/vmsthemefiles/linkedin.png?v=13" alt="LinkedIn"></a>
                 </div>
-                <a href="#" 
-       style="display: inline-block; padding: 12px 24px; font-size: 16px; font-weight: bold; text-align: center; text-decoration: none; border: 3px solid black; border-radius: 8px; background-color: #28a745; color: white;">
-       Register
-    </a>
-                <a href="index.html" 
-       style="display: inline-block; padding: 12px 24px; font-size: 16px; font-weight: bold; text-align: center; text-decoration: none; border: 3px solid black; border-radius: 8px; background-color: #007bff; color: white; margin-left: 10px;">
-       Go to Home Page
-    </a>
+
+                <a href="#" class="btn register-btn">Register</a>
+                <a href="index.html" class="btn home-btn">Go to Home Page</a>
             </div>
         </div>
     </div>
+
+    <script>
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent form submission
+
+            let emailMobile = document.getElementById("emailMobile").value.trim();
+            let password = document.getElementById("password").value.trim();
+            let emailError = document.getElementById("emailError");
+            let passwordError = document.getElementById("passwordError");
+
+            emailError.textContent = "";
+            passwordError.textContent = "";
+
+            let isValid = true;
+
+            // Validate Email or Mobile
+            let emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            let mobilePattern = /^[0-9]{10}$/;
+
+            if (emailMobile === "") {
+                emailError.textContent = "Email or Mobile is required.";
+                isValid = false;
+            } else if (!emailPattern.test(emailMobile) && !mobilePattern.test(emailMobile)) {
+                emailError.textContent = "Enter a valid email or 10-digit mobile number.";
+                isValid = false;
+            }
+
+            // Validate Password
+            if (password === "") {
+                passwordError.textContent = "Password is required.";
+                isValid = false;
+            } else if (password.length < 6) {
+                passwordError.textContent = "Password must be at least 6 characters.";
+                isValid = false;
+            }
+
+            if (isValid) {
+        
+            document.getElementById("loginForm").reset();}
+
+            alert("Saved Sucessfully!!")
+        });
+    </script>
+
 </body>
 </html>
-
