@@ -82,3 +82,131 @@ document.addEventListener('DOMContentLoaded', function() {
     // Fetch live updates on page load
     fetchLiveUpdates();
 });
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const alertBar = document.getElementById("alertBar");
+
+    // Sample alerts (Replace with dynamic fetching if needed)
+    const alerts = [
+        "🔔 Earthquake detected in Tibet | 3.6 Magnitude",
+        "🔔 Flood Warning in Myanmar | Stay Alert",
+        "🔔 Storm approaching Afghanistan | Take Precautions",
+        "🔔 Landslide risk in Uttarkashi, Uttarakhand"
+    ];
+
+    function updateAlerts() {
+        alertBar.innerHTML = "";
+        alerts.forEach(alert => {
+            const alertSpan = document.createElement("span");
+            alertSpan.classList.add("alert-message");
+            alertSpan.textContent = alert;
+            alertBar.appendChild(alertSpan);
+        });
+    }
+
+    updateAlerts();
+});
+        // Sample data
+        const mockData = {
+            alert: {
+                type: 'Flood Warning',
+                location: 'Downtown Area',
+                description: 'Rising water levels observed. Please move to higher ground.',
+                time: new Date().toLocaleTimeString()
+            },
+            resources: [
+                { type: 'Shelter', location: 'Central High School', distance: '0.8 km' },
+                { type: 'Medical', location: 'City Hospital', distance: '1.2 km' },
+                { type: 'Supplies', location: 'Relief Center', distance: '1.5 km' }
+            ],
+            communityStatus: {
+                checkedIn: 245,
+                total: 300
+            }
+        };
+
+        // Initialize the app
+        function initApp() {
+            updateAlert();
+            updateResources();
+            updateCommunityStatus();
+            // Simulate real-time updates
+            setInterval(updateAlert, 5000);
+        }
+
+        // Update alert banner
+        function updateAlert() {
+            const alertMessage = document.getElementById('alertMessage');
+            alertMessage.innerHTML = `
+                <strong>${mockData.alert.type}</strong> - ${mockData.alert.location}<br>
+                ${mockData.alert.description}<br>
+                <small>Last updated: ${mockData.alert.time}</small>
+            `;
+        }
+
+        // Update resources list
+        function updateResources() {
+            const resourceList = document.getElementById('resourceList');
+            resourceList.innerHTML = mockData.resources.map(resource => `
+                <div class="resource-item">
+                    <div>
+                        <strong>${resource.type}</strong><br>
+                        <small>${resource.location}</small>
+                    </div>
+                    <div>${resource.distance}</div>
+                </div>
+            `).join('');
+        }
+
+        // Update community status
+        function updateCommunityStatus() {
+            const { checkedIn, total } = mockData.communityStatus;
+            document.getElementById('checkedInCount').textContent = `${checkedIn}/${total}`;
+            document.getElementById('checkedInProgress').style.width = `${(checkedIn/total) * 100}%`;
+        }
+
+        // SOS function
+        function triggerSOS() {
+            alert('SOS signal sent! Emergency services have been notified.');
+        }
+
+        // Share location function
+        function shareLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(
+                    position => {
+                        alert(`Location shared!\nLat: ${position.coords.latitude}\nLong: ${position.coords.longitude}`);
+                    },
+                    error => {
+                        alert('Error getting location. Please enable location services.');
+                    }
+                );
+            } else {
+                alert('Geolocation is not supported by this browser.');
+            }
+        }
+
+        // Get help function
+        function getHelp() {
+            const helpTypes = ['Medical', 'Supplies', 'Evacuation', 'Other'];
+            const helpType = prompt(`What type of help do you need?\n${helpTypes.join(', ')}`);
+            if (helpType) {
+                alert(`Help request for ${helpType} has been registered. Help is on the way!`);
+            }
+        }
+
+        // Initialize the app when page loads
+        window.onload = initApp;
+
+
+        document.getElementById("cta-button").addEventListener("click", function() {
+            alert("Redirecting to volunteer opportunities...");
+            window.location.href = "https://www.redcross.org/volunteer"; // Replace with the actual link
+        });
+
+        function redirectToChat() {
+            window.location.href = "chatbot.html"; // Change this to your chatbot page URL
+        }
+        
+        

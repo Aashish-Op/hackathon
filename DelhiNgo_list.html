@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NGO Listings</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            text-align: center;
+            margin: 0;
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            background-color: #007bff;
+            padding: 15px;
+            color: white;
+            display: flex;
+            /* justify-content: space-between; */
+            align-items: center;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 60px;
+        }
+
+        .navbar select {
+            padding: 8px;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+
+        .navbar h2 {
+            margin: 0;
+            font-size: 18px;
+        }
+
+        /* Main Container */
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 80px 0 20px; /* Adjusted for navbar */
+        }
+
+        /* NGO Listing */
+        .ngo-card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        button{
+            background-color: #28a745;
+            border: #28a745;
+            border-radius: 5px;
+            
+
+        }
+
+        /* NGO Image */
+        .ngo-image {
+            width: 120px;
+            height: 100px;
+            border-radius: 5px;
+            object-fit: cover;
+        }
+
+        /* NGO Info */
+        .ngo-info {
+            flex-grow: 1;
+            text-align: left;
+        }
+
+        .ngo-info h2 {
+            font-size: 20px;
+            margin: 5px 0;
+        }
+
+        .ngo-info p {
+            font-size: 14px;
+            color: gray;
+        }
+
+        /* Rating Badge */
+        .rating {
+            background-color: #28a745;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-weight: bold;
+            display: inline-block;
+        }
+
+        /* Buttons */
+        .buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .btn {
+            padding: 8px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .btn.green { background-color: #28a745; color: white; }
+        .btn.blue { background-color: #007bff; color: white; }
+        .btn.green:hover { background-color: #218838; }
+        .btn.blue:hover { background-color: #0056b3; }
+
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <h2>Selected Location: <span id="selected-location"></span></h2>
+        
+    </div>
+
+    <div class="container">
+        
+        <!-- NGO Listing 1 -->
+        <div class="ngo-card">
+            <img class="ngo-image" src="NGO1.jpg" alt="NGO">
+            <div class="ngo-info">
+                <h2>AKHIL Bharti Viklang Vidhwa Varidh SEVA Samiti</h2>
+                <span class="rating">4.1 ★</span>
+                <p>C-22/1e Mohan Garden, <span class="city">Delhi</span></p>
+                <div class="buttons">
+                    <button><a href="NGO1_CONT.HTML"style="text-decoration:none;">view contact</a></button>
+                    <a href="https://wa.me/919876543210" class="btn green" target="_blank">WhatsApp</a>
+                    
+                </div>
+            </div>
+        </div>
+
+        <!-- NGO Listing 2 -->
+        <div class="ngo-card">
+            <img class="ngo-image" src="NGO2.jpg" alt="NGO">
+            <div class="ngo-info">
+                <h2>Sky Mark Foundation Trust</h2>
+                <span class="rating">4.3 ★</span>
+                <p>Dabri Extension, <span class="city">Delhi</span></p>
+                <div class="buttons">
+                    <button><a href="NGO2_CONT.HTML" style="text-decoration:none ;">view contact</a></button>
+                    <a href="https://wa.me/919988776655" class="btn green" target="_blank">WhatsApp</a>
+                    
+                </div>
+            </div>
+        </div>
+
+        <!-- NGO Listing 3 -->
+        <div class="ngo-card">
+            <img class="ngo-image" src="NGO3.jpg" alt="NGO">
+            <div class="ngo-info">
+                <h2>Deep Blind Welfare Association</h2>
+                <span class="rating">4.2 ★</span>
+                <p>Rohini, <span class="city">Delhi</span></p>
+                <div class="buttons">
+                    <button><a href="NGO3_CONT.HTML"style="text-decoration:none ;">view contact</a></button>
+                    <a href="https://wa.me/919123456789" class="btn green" target="_blank">WhatsApp</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="ngo-card">
+            <img class="ngo-image" src="ngo4.jpg" alt="NGO">
+            <div class="ngo-info">
+                <h2>Swasthya Samaj Sahbhagita Foundation</h2>
+                <span class="rating">4.2 ★</span>
+                <p>
+                    Shalimar Bagh, <span class="city">Delhi</span></p>
+                <div class="buttons">
+                    <button><a href="NGO4_CONT.HTML" style="text-decoration:none ;">view contact</a></button>
+                    <a href="https://wa.me/919123456789" class="btn green" target="_blank">WhatsApp</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        // Function to show the phone number
+        function showNumber(button, number) {
+            button.textContent = number;
+            button.style.backgroundColor = "#dc3545"; // Change color to red
+        }
+
+        // Function to handle enquiry click
+        function sendEnquiry() {
+            alert("Enquiry Sent! Our team will contact you soon.");
+        }
+
+        // Function to update the selected location
+        function updateLocation() {
+            let selectedLocation = document.getElementById("location-select").value;
+            document.getElementById("selected-location").textContent = selectedLocation;
+
+            // Update city in each listing dynamically
+            let cityElements = document.querySelectorAll(".city");
+            cityElements.forEach(city => {
+                city.textContent = selectedLocation;
+            });
+        }
+    </script>
+
+</body>
+</html>

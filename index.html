@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disaster Relief Coordination</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="apple-touch-icon.png">
+</head>
+<body>
+
+    <!--  Hero Section -->
+
+    
+    <header class ="header1">
+        <div class="logo-container">
+          <span class="brand"> <img src="logo brand.jpeg" alt="" width="150px"> </span>
+          <span class="subtitle"></span>
+        </div>
+        <nav class ="nav1">
+          <a href="#">HOME</a>
+          <a href="vol_login.html">Volunteer</a>
+          <a href="learn.html">Learn </a>
+          <a href="NGO .html">NGO</a>
+
+          <a href="chatbot.html">Get Assistance</a>
+          <div class="dropdown1">
+            <button class="dropbtn1">Find NGOs</button>
+            <div class="dropdown-content1">
+              <a href="DelhiNgo_list.html">Delhi</a>
+              <a href="#">Mumbai</a>
+              <a href="#">Bihar</a>
+              <a href="#">Partner</a>
+            </div>
+          </div>
+          <a href="vol_login.html" class="enquire1">LOGIN NOW</a>
+        </nav>
+      </header>  
+     
+    <div class="carousel">
+        <div class="carousel-slide">
+          
+          <div class="carousel-item">
+            <video autoplay loop muted>
+              <source src="video.mp4" type="video/mp4" width ="100%" height="100%">
+            </video>
+            <div class="caption">
+              <!-- <h1>Report A disaster</h1> -->
+              
+    <header class="hero">
+        <h1>Desh Seva Apni Seva</h1>
+        <p>Connecting communities in times of crisis</p>
+        <a href="improved.html" class="cta-button">Report a Disaster</a>
+        
+    </header>
+              <!-- <a href="#about" class="know-more">Report here</a> -->
+            </div>
+          </div>
+    
+         
+          <div class="carousel-item">
+            <img src="https://media.istockphoto.com/id/1277343937/photo/rescuer-search-trough-ruins-of-building.jpg?s=612x612&w=0&k=20&c=9K-03wusAgtv2zUbvGX8S_UhvQq47hvMTrHgTwq11Bw=" alt="Slide Image 1">
+          </div>
+    
+          
+          <div class="carousel-item">
+            <img src="https://media.istockphoto.com/id/1422277506/photo/search-and-rescue-forces-search-through-a-destroyed-building.jpg?s=612x612&w=0&k=20&c=vW-dDjGX1Y8KuP8gLPpcc_zjerFGGVLYhHN9-lo0Tkk=" alt="Slide Image 2">
+          </div>
+  
+          <div class="carousel-item">
+            <img src="https://factly.in/wp-content/uploads//2022/07/Disaster-relief-funds_Featured-Image.jpg" alt="Slide Image 2">
+          </div>
+  
+          
+        </div>
+    
+        
+        <button class="prev" onclick="prevSlide()">&#10094;</button>
+        <button class="next" onclick="nextSlide()">&#10095;</button>
+      </div>
+
+      <script>
+        let currentIndex = 0;
+        const slides = document.querySelectorAll('.carousel-item');
+        function showSlide(index) {
+          if (index >= slides.length) currentIndex = 0;
+          else if (index < 0) currentIndex = slides.length - 1;
+          else currentIndex = index;
+          document.querySelector('.carousel-slide').style.transform = `translateX(-${currentIndex * 100}%)`;
+        }
+        function nextSlide() { showSlide(currentIndex + 1); }
+        function prevSlide() { showSlide(currentIndex - 1); }
+        setInterval(nextSlide, 15000);
+      </script>
+      <script src="js.js"></script>
+  
+
+
+    <section class="alerts">
+        <h2>Live Disaster Alerts</h2>
+        <!-- 🔥 Live Disaster Alerts -->
+    </div>
+    <div id="news-container">Loading latest disaster news...</div>
+    <div class="alert-container">
+        <div class="alert-bar" id="alertBar">
+            <!-- Alerts will be added here dynamically -->
+        </div>
+    </section>
+    <script src="dis.js"></script>
+
+    <!-- 🏥 Relief Resources -->
+    <section class="resources">
+        <h2>Relief Resources</h2>
+        <div class="container">
+            <!-- Alert Banner -->
+            <div class="alert-banner" id="alertBanner">
+                <i class="fas fa-exclamation-triangle"></i>
+                <span id="alertMessage">Loading alert information...</span>
+            </div>
+    
+            <!-- Quick Action Buttons -->
+            <div class="quick-actions">
+                <button class="action-button sos" onclick="triggerSOS()">
+                    <i class="fas fa-phone-alt fa-2x"></i>
+                        SOS
+                </button>
+                <button class="action-button location" onclick="shareLocation()">
+                    <i class="fas fa-map-marker-alt fa-2x"></i>
+                    Share Location
+                </button>
+                <button class="action-button help" onclick="getHelp()">
+                    <i class="fas fa-hands-helping fa-2x"></i>
+                    Get Help
+                </button>
+            </div>
+    
+            <!-- Resources Card -->
+            <div class="card">
+                <div class="card-title">
+                    <i class="fas fa-box-open"></i>
+                    Nearby Resources
+                </div>
+                <div class="resource-list" id="resourceList">
+                    <!-- Resources will be populated here -->
+                </div>
+            </div>
+    
+            <!-- Community Status -->
+            <div class="card">
+                <div class="card-title">
+                    <i class="fas fa-users"></i>
+                    Community Status
+                </div>
+                <div class="stats-container">
+                    <div class="stat-card">
+                        <h3>People Checked-in</h3>
+                        <p id="checkedInCount">0/0</p>
+                        <div class="progress-bar">
+                            <div class="progress-bar-fill" id="checkedInProgress"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="banner">
+      <img src="https://images2.goabroad.com/image/upload/images2/program_content/how-to-volunteer-for-natural-disasters-image-3-1612452846.jpg" alt="Disaster Relief Volunteers">
+      <div class="overlay">
+          <h1>Volunteers Needed!</h1>
+          <p>Learn about our highest-priority positions and how you can make a difference!</p>
+          <a href="vol_login.html" target="_blank">
+            <button>FIND YOUR OPPORTUNITY</button>
+        </a>
+        
+      </div>
+  </div>
+
+  <div class="chatbot-container">
+    <button class="chatbot-btn" onclick="redirectToChat()">
+        <img src="chatbotimage.jpeg" alt="Chatbot">
+        <span>Ask <i>Assistance</i></span>
+    </button>
+</div>
+
+
+    <!-- 📍 Google Map -->
+    <section class="map">
+        <h2>Affected Areas Map</h2>
+        <div id="map"></div>
+    </section>
+
+    <!-- 👥 Volunteer and NGO Login -->
+    <footer>
+      <div class="footer-container">
+          <div class="contact">
+              <h3>CONTACT US</h3>
+              <p>&#9742; (800) 280-3298</p>
+              <p>&#128205; Lpu jalandhar, pin-144411</p>
+              <p>&#9993; info@rescue.com</p>
+              <div class="social-icons">
+                  <a href="#"><img src="https://store-images.s-microsoft.com/image/apps.30645.9007199266245907.cb06f1f9-9154-408e-b4ef-d19f2325893b.ac3b465e-4384-42a8-9142-901c0405e1bc" alt="Facebook"></a>
+                  <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/X_logo.jpg/480px-X_logo.jpg" alt="Twitter"></a>
+                  <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Instagram_logo_2022.svg/1200px-Instagram_logo_2022.svg.png" alt="Instagram"></a>
+                  <a href="#"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRokEYt0yyh6uNDKL8uksVLlhZ35laKNQgZ9g&s" alt="LinkedIn"></a>
+              </div>
+          </div>
+          <div class="resources">
+              <h3>ADDITIONAL RESOURCES</h3>
+              <ul>
+                  <li><a href="#">History</a></li>
+                  <li><a href="#">Our Team</a></li>
+                  <li><a href="#">Financials</a></li>
+                  <li><a href="#">Impact Reports</a></li>
+                  <li><a href="#">Contact Us</a></li>
+                  <li><a href="#">Privacy Policy</a></li>
+                  <li><a href="#">Terms Of Service</a></li>
+                  <li><a href="#">Non-Discrimination Policy</a></li>
+              </ul>
+          </div>
+          <div class="about">
+              <h3>ABOUT US</h3>
+              <p>Desh seva apni seva is dedicated to reducing wasted food and increasing food access. By keeping food out of landfills, we reduce greenhouse gas emissions that contribute to climate change. Through our proprietary web-based app, we engage volunteers and food donors to directly transfer nutritious excess food to social service agencies serving people experiencing food insecurity.</p>
+          </div>
+      </div>
+      <div class="footer-bottom">&copy; 2025 Desh seva apni seva</div>
+  </footer>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA83aTTBh37Vi3SitzthfJc3gHog2wQ84M&callback=initMap" async defer></script> 
+    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDHj5xtzsTTPwHLiGoL5Gj3ZzP5EMWtIEc&libraries=places&callback=GoogleMapsLoaded" async defer></script>  -->
+    
+    <script src="app.js"></script>
+</body>
+</html>
