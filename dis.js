@@ -198,3 +198,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Initialize the app when page loads
         window.onload = initApp;
+
+
+        document.getElementById("cta-button").addEventListener("click", function() {
+            alert("Redirecting to volunteer opportunities...");
+            window.location.href = "https://www.redcross.org/volunteer"; // Replace with the actual link
+        });
+
+        function redirectToChat() {
+            window.location.href = "chatbot.html"; // Change this to your chatbot page URL
+        }
+        
+        

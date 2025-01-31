@@ -18,17 +18,17 @@
         </div>
         <nav class ="nav1">
           <a href="#">HOME</a>
-          <a href="#">Volunteer</a>
+          <a href="vol_login.html">Volunteer</a>
           <a href="learn.html">Learn </a>
-          <a href="testing3.html">NGO</a>
+          <a href="NGO .html">NGO</a>
 
-          <a href="#">Get Assistance</a>
+          <a href="chatbot.html">Get Assistance</a>
           <div class="dropdown1">
-            <button class="dropbtn1">Connect</button>
+            <button class="dropbtn1">Find NGOs</button>
             <div class="dropdown-content1">
-              <a href="#">Call</a>
-              <a href="#">WhatsApp</a>
-              <a href="#">Email</a>
+              <a href="DelhiNgo_list.html">Delhi</a>
+              <a href="#">Mumbai</a>
+              <a href="#">Bihar</a>
               <a href="#">Partner</a>
             </div>
           </div>
@@ -121,7 +121,7 @@
             <div class="quick-actions">
                 <button class="action-button sos" onclick="triggerSOS()">
                     <i class="fas fa-phone-alt fa-2x"></i>
-                    SOS
+                        SOS
                 </button>
                 <button class="action-button location" onclick="shareLocation()">
                     <i class="fas fa-map-marker-alt fa-2x"></i>
@@ -161,14 +161,27 @@
                 </div>
             </div>
         </div>
-        <table id="resourceTable">
-            <tr>
-                <th>Resource</th>
-                <th>Available</th>
-                <th>Needed</th>
-            </tr>
-        </table>
     </section>
+
+    <div class="banner">
+      <img src="https://images2.goabroad.com/image/upload/images2/program_content/how-to-volunteer-for-natural-disasters-image-3-1612452846.jpg" alt="Disaster Relief Volunteers">
+      <div class="overlay">
+          <h1>Volunteers Needed!</h1>
+          <p>Learn about our highest-priority positions and how you can make a difference!</p>
+          <a href="vol_login.html" target="_blank">
+            <button>FIND YOUR OPPORTUNITY</button>
+        </a>
+        
+      </div>
+  </div>
+
+  <div class="chatbot-container">
+    <button class="chatbot-btn" onclick="redirectToChat()">
+        <img src="chatbotimage.jpeg" alt="Chatbot">
+        <span>Ask <i>Assistance</i></span>
+    </button>
+</div>
+
 
     <!-- 📍 Google Map -->
     <section class="map">
@@ -177,21 +190,44 @@
     </section>
 
     <!-- 👥 Volunteer and NGO Login -->
-
-
-    <!-- 💸 Donation Section -->
-    <section class="donation" id="donation">
-        <h2>Donation</h2>
-        <p>Your contributions can make a significant impact. Donate to support disaster relief efforts.</p>
-        <form id="donationForm">
-            <input type="number" id="donationAmount" placeholder="Donation Amount" required>
-            <input type="text" id="donorName" placeholder="Your Name" required>
-            <input type="email" id="donorEmail" placeholder="Your Email" required>
-            <button type="submit">Donate</button>
-        </form>
-    </section>
+    <footer>
+      <div class="footer-container">
+          <div class="contact">
+              <h3>CONTACT US</h3>
+              <p>&#9742; (800) 280-3298</p>
+              <p>&#128205; 1127 High Ridge Rd. Suite 338, Stamford, CT 06905</p>
+              <p>&#9993; info@foodrescue.us</p>
+              <div class="social-icons">
+                  <a href="#"><img src="https://store-images.s-microsoft.com/image/apps.30645.9007199266245907.cb06f1f9-9154-408e-b4ef-d19f2325893b.ac3b465e-4384-42a8-9142-901c0405e1bc" alt="Facebook"></a>
+                  <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/X_logo.jpg/480px-X_logo.jpg" alt="Twitter"></a>
+                  <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Instagram_logo_2022.svg/1200px-Instagram_logo_2022.svg.png" alt="Instagram"></a>
+                  <a href="#"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRokEYt0yyh6uNDKL8uksVLlhZ35laKNQgZ9g&s" alt="LinkedIn"></a>
+              </div>
+          </div>
+          <div class="resources">
+              <h3>ADDITIONAL RESOURCES</h3>
+              <ul>
+                  <li><a href="#">History</a></li>
+                  <li><a href="#">Our Team</a></li>
+                  <li><a href="#">Financials</a></li>
+                  <li><a href="#">Impact Reports</a></li>
+                  <li><a href="#">Contact Us</a></li>
+                  <li><a href="#">Privacy Policy</a></li>
+                  <li><a href="#">Terms Of Service</a></li>
+                  <li><a href="#">Non-Discrimination Policy</a></li>
+              </ul>
+          </div>
+          <div class="about">
+              <h3>ABOUT US</h3>
+              <p>Food Rescue US is dedicated to reducing wasted food and increasing food access. By keeping food out of landfills, we reduce greenhouse gas emissions that contribute to climate change. Through our proprietary web-based app, we engage volunteers and food donors to directly transfer nutritious excess food to social service agencies serving people experiencing food insecurity.</p>
+          </div>
+      </div>
+      <div class="footer-bottom">&copy; 2025 Food Rescue US</div>
+  </footer>
 
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA83aTTBh37Vi3SitzthfJc3gHog2wQ84M&callback=initMap" async defer></script> 
+    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDHj5xtzsTTPwHLiGoL5Gj3ZzP5EMWtIEc&libraries=places&callback=GoogleMapsLoaded" async defer></script>  -->
+    
     <script src="app.js"></script>
 </body>
 </html>
